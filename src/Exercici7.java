@@ -10,10 +10,20 @@ public class Exercici7 {
         double B = scanner.nextDouble();
         double C = scanner.nextDouble();
 
-        //Formula per resoldre les equacions de segon grau.
-        double resol1 = (-B - sqrt(B*B - 4 * A * C)) / 2 * A;
-        double resol2 = (-B + sqrt(B*B - 4 * A * C)) / 2 * A;
+        double discr = B*B - 4 * A * C;
+        if (discr < 0){
+            System.out.println("No te resultat");
+            return;
+        }
+        if (discr == 0){
+            double sol = -B / (2*A);
+            System.out.println("hi ha una solució: " + sol);
+        }
 
-        System.out.println("X = "+resol1+" o "+resol2);
+        //Formula per resoldre les equacions de segon grau.
+        double resol1 = (-B - sqrt(discr)) / (2*A);
+        double resol2 = (-B + sqrt(discr)) / (2*A);
+
+        System.out.println("Les dues solucions són: "+resol1+" i "+resol2);
     }
 }
